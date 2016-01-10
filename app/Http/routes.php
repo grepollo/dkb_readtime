@@ -40,6 +40,8 @@ Route::group(['middleware' => ['web']], function () {
             'readtime' => 6
         ]);
     });
+
+    Route::post('validate', 'ReadTimeController@validateAnswer');
 });
 
 
