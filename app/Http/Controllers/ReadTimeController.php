@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ReadTimeController extends Controller
 {
@@ -28,22 +29,28 @@ class ReadTimeController extends Controller
     public function validateAnswer(Request $request)
     {
         $params = $request->all();
-        var_dump($params);
+        //dd($params);
+
         $answer = [1, 3, 2];
+        $incorrect = [];
         $correct = 0;
         foreach($answer as $i => $a) {
             if ((int)$a === (int)$params['answer'. ($i + 1)]) { ;
                 $correct++;
+            } else {
+                $incorrect[] = 'answer'. ($i + 1);
             }
         }
         if ($correct === count($answer)) {
             $readTime = $params['words'] / $params['time'];
-            var_dump($readTime);
-            var_dump(\Session::all());
+            $user = Auth::user();
+            $user->readtime = $readTime;
+            $user->save();
             //todo save to user
-
             return view('success', ['time' => round($readTime)]);
         } else {
+            $request->session()->flash('incorrect',  $incorrect);
+            $request->session()->flash('message',  'You have incorrect answer');
             return back()->withInput();
         }
 
