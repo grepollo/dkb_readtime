@@ -31,11 +31,11 @@ class ReadTimeController extends Controller
         $params = $request->all();
         //dd($params);
 
-        $answer = [1, 3, 2];
+        $answer = ['a', 'c', 'a', 'a'];
         $incorrect = [];
         $correct = 0;
         foreach($answer as $i => $a) {
-            if ((int)$a === (int)$params['answer'. ($i + 1)]) { ;
+            if ($a == $params['answer'. ($i + 1)]) { ;
                 $correct++;
             } else {
                 $incorrect[] = 'answer'. ($i + 1);
