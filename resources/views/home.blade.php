@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+#article-content p { font-size: 16px;}
+</style>
 <div class="container spark-screen">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -26,7 +29,7 @@
                         <p>First, some background: You might not realize this, but the top prize in the $1.5 billion Powerball is not actually $1.5 billion. (Nor is it $999 million, as many of the three-digit-readout lottery signs around the country say it is.) If you take the prize as a one-time cash payment, you will get a mere $930 million, before taxes.</p>
                         <p>If you want $1.5 billion, you'll have to take it in installments over the next 30 years. That's a long time, and so most people take the cash, according to Kelly Cripe, a Powerball spokeswoman. But I think most of them are making a mistake, for the following reasons.</p>
                         <p>First, while people associate the term "annuity" with payment streams that end when you die, the Powerball prize is actually what actuaries call an annuity certain: a stream of annual payments, every year from now until 2045, regardless of what happens to you. If you die before 2045, the future payments become part of your estate, like any other asset.</p>
-                        <p>Second, there are big tax advantages to the annuity. The main one is that taking the annuity is basically like letting the government hold onto part of your prize for a while and invest it for you — and the government does not pay tax on investment income. Of course, once you get the annuity checks, you'll have to pay income tax on them. But if you take the lump-sum cash prize, you'll pay tax twice: on the prize when you win it, and on the income you get by investing it.</p>
+                        <p>Second, there are big tax advantages to the annuity. The main one is that taking the annuity is basically like letting the government hold onto part of your prize for a while and invest it for you - and the government does not pay tax on investment income. Of course, once you get the annuity checks, you'll have to pay income tax on them. But if you take the lump-sum cash prize, you'll pay tax twice: on the prize when you win it, and on the income you get by investing it.</p>
                         <p>This adds up. If you invested all your prize money in the same way Powerball does (essentially by putting it in government bonds), you'd end up with 20 percent more cash in 2045 if you took the annuity option rather than the cash option, thanks to the tax savings. You could shave that difference by picking a different investment strategy with better tax management, but you'll never beat the effective tax rate of zero on the investment income earned inside the Powerball annuity.</p>
                         <p>On the other hand, there is a potential tax disadvantage with the annuity. If you die before it's finished paying out, you can leave the future payments to your heirs, but the I.R.S. will want to collect <a href="http://topics.nytimes.com/your-money/planning/estate-planning/index.html?inline=nyt-classifier" title="More articles about estate planning." class="meta-classifier">estate tax</a> right away on those payments' future value. If you die shortly after getting the prize, you won't have nearly enough cash on hand to satisfy the taxes due.</p>
                         <p>Powerball's website proposes a simple solution to this: If you die, Powerball can convert your annuity into a cash lump sum, so you can pay estate tax. However, it can only do that if it's legal in the state where you bought the ticket. Texas, for example, has a law authorizing such conversions; New York does not. If your state won't allow it, and you have reason to believe your life expectancy may be short, that is a strong argument for taking the lump sum.</p>
@@ -47,32 +50,32 @@
                             <ol>
                                 <li> Between annuity and lump sum, which has a larger total payout? <br/>
                                     <div class="answers checkbox">
-                                        {!!  Form::radio('answer1', 'a') !!} a. Annuity <br/>
-                                        {!!  Form::radio('answer1', 'b') !!} b. Lump <br/>
-                                        {!!  Form::radio('answer1', 'c') !!} c. Neither <br/>
+                                        {!!  Form::radio('answer1', 'a') !!}&nbsp; a. Annuity <br/>
+                                        {!!  Form::radio('answer1', 'b') !!}&nbsp; b. Lump <br/>
+                                        {!!  Form::radio('answer1', 'c') !!}&nbsp; c. Neither <br/>
                                     </div>
                                 </li>
                                 <li>If you were to take annuity payments, what investment percent interest could you expect to make? <br/>
                                     <div class="answers checkbox">
-                                        {!!  Form::radio('answer1', 'a') !!} a. 1.54% <br/>
-                                        {!!  Form::radio('answer1', 'b') !!} b. 3.10% <br/>
-                                        {!!  Form::radio('answer1', 'c') !!} c. 2.84% <br/>
-                                        {!!  Form::radio('answer1', 'd') !!} d. 2.27% <br/>
-                                        {!!  Form::radio('answer1', 'e') !!} e. None <br/>
+                                        {!!  Form::radio('answer2', 'a') !!}&nbsp; a. 1.54% <br/>
+                                        {!!  Form::radio('answer2', 'b') !!}&nbsp; b. 3.10% <br/>
+                                        {!!  Form::radio('answer2', 'c') !!}&nbsp; c. 2.84% <br/>
+                                        {!!  Form::radio('answer2', 'd') !!}&nbsp; d. 2.27% <br/>
+                                        {!!  Form::radio('answer2', 'e') !!}&nbsp; e. None <br/>
                                     </div>
                                 </li>
                                 <li>Can annuity payments be converted to a lump sum to cover estate tax if you die? <br/>
                                     <div class="answers checkbox">
-                                        {!!  Form::radio('answer1', 'a') !!} a. Yes <br/>
-                                        {!!  Form::radio('answer1', 'b') !!} b. No <br/>
-                                        {!!  Form::radio('answer1', 'c') !!} c. Both <br/>
+                                        {!!  Form::radio('answer3', 'a') !!}&nbsp; a. Yes <br/>
+                                        {!!  Form::radio('answer3', 'b') !!}&nbsp; b. No <br/>
+                                        {!!  Form::radio('answer3', 'c') !!}&nbsp; c. Both <br/>
                                     </div>
                                 </li>
                                 <li>If you die, and you are receiving annuity payments, will your heirs be required to handle the estate taxes? <br/>
                                     <div class="answers checkbox">
-                                        {!!  Form::radio('answer1', 'a') !!} a. Yes <br/>
-                                        {!!  Form::radio('answer1', 'b') !!} b. No <br/>
-                                        {!!  Form::radio('answer1', 'c') !!} c. Maybe <br/>
+                                        {!!  Form::radio('answer4', 'a') !!}&nbsp; a. Yes <br/>
+                                        {!!  Form::radio('answer4', 'b') !!}&nbsp; b. No <br/>
+                                        {!!  Form::radio('answer4', 'c') !!}&nbsp; c. Maybe <br/>
                                     </div>
                                 </li>
                             </ol>
