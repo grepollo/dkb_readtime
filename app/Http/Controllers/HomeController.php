@@ -24,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $incorrect = \Session::get('incorrect');
+        return view('home')->with('incorrect', $incorrect);
     }
 }

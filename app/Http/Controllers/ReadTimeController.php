@@ -29,16 +29,15 @@ class ReadTimeController extends Controller
     public function validateAnswer(Request $request)
     {
         $params = $request->all();
-        //dd($params);
-
         $answer = ['a', 'c', 'a', 'a'];
         $incorrect = [];
         $correct = 0;
         foreach($answer as $i => $a) {
-            if ($a == $params['answer'. ($i + 1)]) { ;
+            $answered = isset($params['answer'. ($i + 1)]) ? $params['answer'. ($i + 1)] : '';
+            if ($a == $answered ) { ;
                 $correct++;
             } else {
-                $incorrect[] = 'answer'. ($i + 1);
+                $incorrect['answer'. ($i + 1)] = $answered;
             }
         }
         if ($correct === count($answer)) {
